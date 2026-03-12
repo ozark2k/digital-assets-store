@@ -78,46 +78,31 @@ export default function Products() {
         <h2 className="section-title">Escolha seu Ativo</h2>
         <p className="section-subtitle">Garantia de reposição e entrega 100% automática após o Pix.</p>
 
-        <div className="products-grid">
+        <div className="products-list">
           {products.map((product) => {
             const qty = cart[product.id] || 0;
             return (
-            <div key={product.id} className={`product-card glass ${product.popular ? 'popular' : ''}`}>
-              {product.popular && <div className="popular-badge">Mais Vendido</div>}
-              
-              <div className="product-header">
-                <h3>{product.name}</h3>
+            <div key={product.id} className={`product-list-item glass ${qty > 0 ? 'selected' : ''}`}>
+              <div className="product-info">
+                <h3>{product.name} {product.popular && <span className="badge-inline">Mais Vendido</span>}</h3>
                 <p className="description">{product.description}</p>
-              </div>
-              
-              <div className="product-price">
                 <span className="price">{product.price}</span>
               </div>
 
-              <ul className="features-list">
-                {product.features.map((feature, idx) => (
-                  <li key={idx}>
-                    <CheckCircle2 size={16} className="check-icon" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="product-actions">
+              <div className="product-actions-list">
                 {qty > 0 ? (
-                  <div className="quantity-selector">
+                  <div className="quantity-selector-inline">
                     <button className="qty-btn" onClick={() => updateQuantity(product.id, -1)}>
-                      <Minus size={18} />
+                      <Minus size={16} />
                     </button>
                     <span className="qty-value">{qty}</span>
                     <button className="qty-btn" onClick={() => updateQuantity(product.id, 1)}>
-                      <Plus size={18} />
+                      <Plus size={16} />
                     </button>
                   </div>
                 ) : (
-                  <button className="btn-buy" onClick={() => updateQuantity(product.id, 1)}>
-                    <ShoppingCart size={18} />
-                    Adicionar
+                  <button className="btn-add-inline" onClick={() => updateQuantity(product.id, 1)}>
+                    + ADICIONAR
                   </button>
                 )}
               </div>
