@@ -7,11 +7,6 @@ export default function Hero() {
     <section className="hero-section">
       <div className="hero-container">
         
-        <div className="badge animate-slide-up" style={{ animationDelay: '0.1s' }}>
-          <ShieldCheck size={14} style={{ marginRight: 6, display: 'inline' }} />
-          Qualidade Garantida e Suporte Especializado
-        </div>
-
         <h1 className="hero-title animate-slide-up" style={{ animationDelay: '0.2s' }}>
           Escale sua Operação com <br />
           <span className="text-gradient">Ativos Premium</span>
