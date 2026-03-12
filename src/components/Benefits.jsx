@@ -12,16 +12,6 @@ const benefits = [
     icon: <Shield size={32} />,
     title: 'Qualidade Premium',
     description: 'Contas altamente aquecidas e validadas, reduzindo risco de restrições.'
-  },
-  {
-    icon: <Headset size={32} />,
-    title: 'Suporte Humanizado',
-    description: 'Nossa equipe está disponível de Seg a Dom para ajudar com suas dúvidas.'
-  },
-  {
-    icon: <RefreshCw size={32} />,
-    title: 'Garantia de Reposição',
-    description: 'Se houver problema de bloqueio inicial comprovado, trocamos seu ativo.'
   }
 ];
 
